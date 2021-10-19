@@ -57,40 +57,40 @@ public class ImageManager : MonoBehaviour
 
     public void StartFadeIn(GameObject i)
     {
-        StartCoroutine(FadeIn(i.GetComponent<SpriteRenderer>(), 0.01f, 1f));
+        StartCoroutine(FadeIn(i, 0.01f, 1f));
     }
 
     public void StartFadeOut(GameObject i)
     {
-        StartCoroutine(FadeOut(i.GetComponent<SpriteRenderer>(), 0.01f, 1f));
-        i.SetActive(false);
+        StartCoroutine(FadeOut(i, 0.01f, 1f));
+        
     }
-    IEnumerator FadeOut(SpriteRenderer i, float smoothness, float duration)
+    IEnumerator FadeOut(GameObject i, float smoothness, float duration)
     {
 
         float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
         float increment = smoothness / duration; //The amount of change to apply.
-        //SpriteRenderer sr = i.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = i.GetComponent<SpriteRenderer>();
         while (progress < 1)
         {
 
-            i.color = Color.Lerp(new Color(i.color.r, i.color.g, i.color.b, 1), new Color(i.color.r, i.color.g, i.color.b, 0), progress);
+            sr.color = Color.Lerp(new Color(sr.color.r, sr.color.g, sr.color.b, 1), new Color(sr.color.r, sr.color.g, sr.color.b, 0), progress);
             progress += increment;
             yield return new WaitForSeconds(smoothness);
         }
-
+        i.SetActive(false);
     }
 
-    IEnumerator FadeIn(SpriteRenderer i, float smoothness, float duration)
+    IEnumerator FadeIn(GameObject i, float smoothness, float duration)
     {
 
         float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
         float increment = smoothness / duration; //The amount of change to apply.
-        //SpriteRenderer sr = i.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = i.GetComponent<SpriteRenderer>();
         while (progress < 1)
         {
 
-            i.color = Color.Lerp(new Color(i.color.r, i.color.g, i.color.b, 0), new Color(i.color.r, i.color.g, i.color.b, 1), progress);
+            sr.color = Color.Lerp(new Color(sr.color.r, sr.color.g, sr.color.b, 0), new Color(sr.color.r, sr.color.g, sr.color.b, 1), progress);
             progress += increment;
             yield return new WaitForSeconds(smoothness);
         }
