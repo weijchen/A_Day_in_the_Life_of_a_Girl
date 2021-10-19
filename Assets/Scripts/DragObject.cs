@@ -9,6 +9,7 @@ public class DragObject : MonoBehaviour
     private Vector3 originPos;
     private bool isMouseDown = false;
     bool iscollition = false;
+    public string TargetName;
     private void Start()
     {
         originPos = transform.position;
@@ -46,33 +47,19 @@ public class DragObject : MonoBehaviour
             transform.position = originPos;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision);
-        if (collision.gameObject.name == "Circle")
-        {
-            iscollition = true;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Circle")
-        {
-            iscollition = false;
-        }
-    }
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision);
-        if (collision.gameObject.name == "Circle")
+        if (collision.gameObject.name == TargetName)
         {
             iscollition = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Circle")
+        if (collision.gameObject.name == TargetName)
         {
             iscollition = false;
         }
