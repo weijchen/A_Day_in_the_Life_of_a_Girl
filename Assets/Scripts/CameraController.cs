@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     private float startX;
     private float startY;
     private float startZ;
+    private Transform originPos;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class CameraController : MonoBehaviour
         startX = gameObject.transform.position.x;
         startY = gameObject.transform.position.y;
         startZ = gameObject.transform.position.z;
+        originPos = this.transform;
     }
 
     public void ZoomIn(ZoomProperties zoomProperties)
@@ -62,5 +64,10 @@ public class CameraController : MonoBehaviour
             
             yield return new WaitForSeconds(smoothness);
         }
+    }
+
+    public void RestPos()
+    {
+        transform.position = originPos.position;
     }
 }

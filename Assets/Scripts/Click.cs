@@ -56,6 +56,7 @@ public class Click : MonoBehaviour
             if (hit.collider != null &&hit.collider.gameObject==this.gameObject)
             {
                 clickEvent.Invoke("11");
+                GetComponent<BoxCollider2D>().enabled = false;
                 zoomProperties.zoomInPosition = zoomInPosition;
                 zoomProperties.zoomInSize = zoomInSize;
                 zoomProperties.smoothness = smoothness;
