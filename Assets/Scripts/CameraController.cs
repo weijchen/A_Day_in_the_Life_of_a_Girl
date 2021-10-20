@@ -4,6 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public struct ZoomProperties
+{
+    public Transform zoomInPosition;
+    public float zoomInSize;
+    public float smoothness;
+    public float zoomInTime;
+    public float zoomInStay;
+    public float zoomOutTime;
+}
+
 public class CameraController : MonoBehaviour
 {
     private Camera _camera;

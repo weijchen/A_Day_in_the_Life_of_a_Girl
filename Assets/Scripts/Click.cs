@@ -16,15 +16,6 @@ public class ZoomEvent : UnityEvent<ZoomProperties>
 
 }
 
-public struct ZoomProperties
-{
-    public Transform zoomInPosition;
-    public float zoomInSize;
-    public float smoothness;
-    public float zoomInTime;
-    public float zoomInStay;
-    public float zoomOutTime;
-}
 
 public class Click : MonoBehaviour
 {
@@ -45,6 +36,11 @@ public class Click : MonoBehaviour
         if (clickEvent == null)
         {
             clickEvent = new ClickEvent();
+        }
+
+        if (zoomEvent == null)
+        {
+            zoomEvent = new ZoomEvent();
         }
     }
 

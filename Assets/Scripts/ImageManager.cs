@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ImageManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static Transform[] Images;
     public int currentindex;
+    
     private void Awake()
     {
         Images = new Transform[transform.childCount];
@@ -18,12 +18,6 @@ public class ImageManager : MonoBehaviour
     private void Start()
     {
         currentindex = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ChangeToNext()
@@ -46,11 +40,6 @@ public class ImageManager : MonoBehaviour
             Debug.Log("warning");
         }
     }
-
-
-
-
-
 
     public void StartFadeIn(GameObject i)
     {
