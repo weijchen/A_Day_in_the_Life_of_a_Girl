@@ -733,13 +733,49 @@ PrefabInstance:
       value: Photo
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
-      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: zoomInSize
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
-      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      propertyPath: zoomInStay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomInTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomOutTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomInPosition
+      value: 
+      objectReference: {fileID: 262854667}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1352074128}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -749,6 +785,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1352074128}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1352074124}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 0
       objectReference: {fileID: 0}
@@ -757,20 +801,44 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ZoomIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: FadeToNext
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ZoomIn
+      value: setZoomInSize
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CameraController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: CameraController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: CameraController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: zoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
@@ -868,7 +936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262854666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.49, y: -3.73, z: 0}
+  m_LocalPosition: {x: 3.64, y: -3.73, z: -2.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438732691}
@@ -1919,12 +1987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fca746bfdd43c41b95267fed01d4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomInPosition: {fileID: 262854667}
-  zoomInSize: 5.85
-  smoothness: 0.01
-  zoomInTime: 2
-  zoomInStay: 2
-  zoomOutTime: 1
 --- !u!4 &1352667455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}

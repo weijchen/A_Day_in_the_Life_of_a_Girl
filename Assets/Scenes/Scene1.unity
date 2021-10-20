@@ -364,11 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomInPosition: {fileID: 1123331792}
-  zoomInSize: 1
-  smoothness: 0.01
-  zoomInTime: 20
-  zoomInStay: 5
-  zoomOutTime: 20
+  zoomInSize: 2
 --- !u!1 &1868963471
 GameObject:
   m_ObjectHideFlags: 0
