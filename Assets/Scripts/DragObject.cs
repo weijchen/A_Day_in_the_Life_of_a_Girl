@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+[System.Serializable]
+public class DragEvent : UnityEvent<string>
+{
+
+}
 public class DragObject : MonoBehaviour
 {
     // Start is called before the first frame update
+    public DragEvent dragEvent;
     private Vector3 lastMousePosition = Vector3.zero;
     private Vector3 originPos;
     private bool isMouseDown = false;
@@ -40,7 +47,9 @@ public class DragObject : MonoBehaviour
         lastMousePosition = Vector3.zero;
         if (iscollition)
         {
+            dragEvent.Invoke("1");
             Destroy(gameObject);
+            
         }
         else
         {

@@ -57,12 +57,12 @@ public class ImageManager : MonoBehaviour
 
     public void StartFadeIn(GameObject i)
     {
-        StartCoroutine(FadeIn(i, 0.01f, 1f));
+        StartCoroutine(FadeIn(i, 0.01f, 2f));
     }
 
     public void StartFadeOut(GameObject i)
     {
-        StartCoroutine(FadeOut(i, 0.01f, 1f));
+        StartCoroutine(FadeOut(i, 0.01f, 2f));
         
     }
     IEnumerator FadeOut(GameObject i, float smoothness, float duration)

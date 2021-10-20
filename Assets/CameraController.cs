@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
 {
     [Header("Zoom In")]
     [SerializeField] Transform zoomInPosition;
-    [SerializeField][Range(0, 5)] private float zoomInSize;
+    [SerializeField][Range(0, 9.8f)] private float zoomInSize;
     [SerializeField] private float smoothness = 0.01f;
     [SerializeField] private float zoomInTime = 1.0f;
     [SerializeField] private float zoomInStay = 2.0f;
@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour
         startX = gameObject.transform.position.x;
         startY = gameObject.transform.position.y;
         startZ = gameObject.transform.position.z;
-        ZoomIn();
+        //ZoomIn();
     }
 
     public void setZoomInPosition(Transform newPosition)
@@ -64,7 +64,7 @@ public class CameraController : MonoBehaviour
             progress += inc;
             if (progress >= zoomInStay/duration)
             {
-                ZoomOut();
+                //ZoomOut();
             }    
             yield return new WaitForSeconds(smoothness);
         }
