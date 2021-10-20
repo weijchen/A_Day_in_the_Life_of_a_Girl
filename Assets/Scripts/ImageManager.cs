@@ -39,11 +39,6 @@ public class ImageManager : MonoBehaviour
     public void AddIndex()
     {
         currentindex++;
-        if (currentindex == Images.Length)
-        {
-            currentindex--;
-            Debug.Log("warning");
-        }
     }
 
     public void StartFadeIn(GameObject i)
@@ -92,7 +87,10 @@ public class ImageManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         StartFadeOut(Images[currentindex].gameObject);
         AddIndex();
-        Images[currentindex].gameObject.SetActive(true);
-        StartFadeIn(Images[currentindex].gameObject);
+        if (currentindex < Images.Length)
+        {
+            Images[currentindex].gameObject.SetActive(true);
+            StartFadeIn(Images[currentindex].gameObject);    
+        }
     }
 }
