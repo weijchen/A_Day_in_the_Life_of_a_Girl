@@ -30,9 +30,12 @@ public class Click : MonoBehaviour
     public ClickEvent clickEvent;
     public ZoomEvent zoomEvent;
     public ZoomProperties zoomProperties;
+
+    private ImageManager _imageManager;
     
     void Start()
     {
+        _imageManager = FindObjectOfType<ImageManager>();
         if (clickEvent == null)
         {
             clickEvent = new ClickEvent();
@@ -49,18 +52,24 @@ public class Click : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.collider != null &&hit.collider.gameObject==this.gameObject)
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                clickEvent.Invoke("11");
-                GetComponent<BoxCollider2D>().enabled = false;
-                zoomProperties.zoomInPosition = zoomInPosition;
-                zoomProperties.zoomInSize = zoomInSize;
-                zoomProperties.smoothness = smoothness;
-                zoomProperties.zoomInTime = zoomInTime;
-                zoomProperties.zoomInStay = zoomInStay;
-                zoomProperties.zoomOutTime = zoomOutTime;
-                zoomEvent.Invoke(zoomProperties);
+                if (_imageManager.canFadeNext)
+                {
+                    clickEvent.Invoke("11");
+                    GetComponent<BoxCollider2D>().enabled = false;
+                }
                 
+                if (zoomInPosition != null)
+                {
+                    zoomProperties.zoomInPosition = zoomInPosition;
+                    zoomProperties.zoomInSize = zoomInSize;
+                    zoomProperties.smoothness = smoothness;
+                    zoomProperties.zoomInTime = zoomInTime;
+                    zoomProperties.zoomInStay = zoomInStay;
+                    zoomProperties.zoomOutTime = zoomOutTime;
+                    zoomEvent.Invoke(zoomProperties);    
+                }
                 //Debug.Log(hit.collider.gameObject.name);
             }
 
