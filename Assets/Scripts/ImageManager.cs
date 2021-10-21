@@ -86,10 +86,26 @@ public class ImageManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         StartFadeOut(Images[currentindex].gameObject);
+        foreach (Transform child in Images[currentindex].transform)
+        {
+            if (child.GetComponent<SpriteRenderer>() != null)
+            {
+                StartFadeOut(child.gameObject);
+            }
+
+        }
         AddIndex();
         if (currentindex < Images.Length)
         {
             Images[currentindex].gameObject.SetActive(true);
+            foreach (Transform child in Images[currentindex].transform)
+            {
+                if (child.GetComponent<SpriteRenderer>() != null)
+                {
+                    StartFadeIn(child.gameObject);
+                }
+
+            }
             StartFadeIn(Images[currentindex].gameObject);    
         }
     }
