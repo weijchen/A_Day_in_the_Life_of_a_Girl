@@ -8,7 +8,7 @@ public class ImageManager : MonoBehaviour
     public static Transform[] Images;
     public int currentindex;
 
-    private bool canFadeNext = true;
+    public bool canFadeNext = true;
     
     private void Awake()
     {
@@ -21,11 +21,6 @@ public class ImageManager : MonoBehaviour
     private void Start()
     {
         currentindex = 0;
-    }
-
-    public bool GetCanFadeNext()
-    {
-        return canFadeNext;
     }
 
     public void ChangeToNext()

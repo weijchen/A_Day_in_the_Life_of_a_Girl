@@ -67,7 +67,7 @@ public class Click : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                if (_imageManager.GetCanFadeNext())
+                if (_imageManager.canFadeNext)
                 {
                     clickEvent.Invoke("11");
                     GetComponent<BoxCollider2D>().enabled = false;
