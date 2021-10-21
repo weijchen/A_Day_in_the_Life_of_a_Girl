@@ -22,6 +22,7 @@ public class CameraController : MonoBehaviour
     private float startY;
     private float startZ;
     private Transform originPos;
+    private float originSize;
 
     void Start()
     {
@@ -30,7 +31,8 @@ public class CameraController : MonoBehaviour
         startX = gameObject.transform.position.x;
         startY = gameObject.transform.position.y;
         startZ = gameObject.transform.position.z;
-        originPos = this.transform;
+        originPos = _camera.transform;
+        originSize = 9.6f;
     }
 
     public void ZoomIn(ZoomProperties zoomProperties)
@@ -48,10 +50,10 @@ public class CameraController : MonoBehaviour
             _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, zoomProperties.zoomInSize, progress);
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, zoomProperties.zoomInPosition.position, progress);
             progress += inc;
-            if (progress >= zoomProperties.zoomInStay/zoomProperties.zoomInTime)
-            {
-                ZoomOut(zoomProperties.smoothness, zoomProperties.zoomOutTime);
-            }    
+            //if (progress >= zoomProperties.zoomInStay/zoomProperties.zoomInTime)
+            //{
+                //ZoomOut(zoomProperties.smoothness, zoomProperties.zoomOutTime);
+            //}    
             yield return new WaitForSeconds(zoomProperties.smoothness);
         }
     }
@@ -76,8 +78,16 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void RestPos()
+    public void RestPos(float time)
     {
-        transform.position = originPos.position;
+        StartCoroutine(ResetPosIE(time));
+    }
+
+    IEnumerator ResetPosIE(float time)
+    {
+        Debug.Log(originPos.position);
+        yield return new WaitForSeconds(time);
+        _camera.transform.position = new Vector3(0,0,-10);
+        _camera.orthographicSize = originSize;
     }
 }
