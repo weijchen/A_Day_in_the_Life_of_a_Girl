@@ -31,14 +31,12 @@ public class Click : MonoBehaviour
     [SerializeField] private TransitionType zoomOutType = TransitionType.change;
     [SerializeField] private GameObject textBubble;
     [SerializeField] private GameObject textContext;
-    // [SerializeField] private bool fadeToNext = false;
-    // [SerializeField] private bool chgToNext = false;
-    [SerializeField] private float priorDeleteTime = 0.2f;
 
     public ClickEvent clickEvent;
     public ZoomEvent zoomEvent;
     public ZoomProperties zoomProperties;
 
+    private bool hasZoom = false;
     private float delayTimer = 0f;
     private ImageManager _imageManager;
     private CameraController _cameraController;
@@ -107,7 +105,7 @@ public class Click : MonoBehaviour
                 clickEvent.Invoke("11");
                 GetComponent<BoxCollider2D>().enabled = false;
                 
-                if (zoomInPosition != null || _cameraController.GetIsZoomOutFinish())
+                if (!hasZoom && (zoomInPosition != null || _cameraController.GetIsZoomOutFinish()))
                 {
                     zoomProperties.zoomInPosition = zoomInPosition;
                     zoomProperties.zoomInSize = zoomInSize;
@@ -121,6 +119,8 @@ public class Click : MonoBehaviour
                     {
                         textContext.SetActive(true);
                     }
+
+                    hasZoom = true;
                 }
 
                 if (delayTimer >= startDelayTime)
