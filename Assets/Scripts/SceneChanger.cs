@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    [SerializeField] private int finalImageInd = 0;
-    
     private ImageManager _imageManager;
+    private int finalImageInd;
     private Animator _animator;
     private int levelToLoad;
 
     private void Start()
     {
         _imageManager = FindObjectOfType<ImageManager>();
+        finalImageInd = _imageManager.transform.childCount - 1;
         _animator = GetComponent<Animator>();
     }
 
