@@ -50,10 +50,11 @@ public class CameraController : MonoBehaviour
             _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, zoomProperties.zoomInSize, progress);
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, zoomProperties.zoomInPosition.position, progress);
             progress += inc;
-            //if (progress >= zoomProperties.zoomInStay/zoomProperties.zoomInTime)
-            //{
+            if (progress >= zoomProperties.zoomInStay/zoomProperties.zoomInTime)
+            {
                 //ZoomOut(zoomProperties.smoothness, zoomProperties.zoomOutTime);
-            //}    
+                RestPos(0);
+            }    
             yield return new WaitForSeconds(zoomProperties.smoothness);
         }
     }
