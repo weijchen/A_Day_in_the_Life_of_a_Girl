@@ -26,6 +26,7 @@ public class Click : MonoBehaviour
     [SerializeField] private float zoomInTime = 1.0f;
     [SerializeField] private float zoomInStay = 2.0f;
     [SerializeField] private float zoomOutTime = 1.0f;
+    [SerializeField] private GameObject textObj;
 
     [Header("Next Arrow")]
     [SerializeField] private float timeToShow = 3.0f;
@@ -49,6 +50,11 @@ public class Click : MonoBehaviour
         if (zoomEvent == null)
         {
             zoomEvent = new ZoomEvent();
+        }
+
+        if (textObj != null)
+        {
+            textObj.SetActive(false);
         }
     }
     
@@ -81,7 +87,11 @@ public class Click : MonoBehaviour
                     zoomProperties.zoomInTime = zoomInTime;
                     zoomProperties.zoomInStay = zoomInStay;
                     zoomProperties.zoomOutTime = zoomOutTime;
-                    zoomEvent.Invoke(zoomProperties);    
+                    zoomEvent.Invoke(zoomProperties);
+                    if (textObj != null)
+                    {
+                        textObj.SetActive(true);
+                    }
                 }
 
                 if (timer >= timeToShow)

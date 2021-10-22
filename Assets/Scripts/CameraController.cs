@@ -37,10 +37,16 @@ public class CameraController : MonoBehaviour
 
     public void ZoomIn(ZoomProperties zoomProperties)
     {
-        StartCoroutine(StartZoomIn(zoomProperties));
+        StartCoroutine(StartZoomIn(zoomProperties, false));
+    }
+
+    public void ZoomInWithZoomOut(ZoomProperties zoomProperties)
+    {
+        StartCoroutine(StartZoomIn(zoomProperties, true));
     }
     
-    IEnumerator StartZoomIn(ZoomProperties zoomProperties)
+    
+    IEnumerator StartZoomIn(ZoomProperties zoomProperties, bool zoomOut)
     {
         float progress = 0;
         float inc = zoomProperties.smoothness / zoomProperties.zoomInTime;
@@ -50,10 +56,13 @@ public class CameraController : MonoBehaviour
             _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, zoomProperties.zoomInSize, progress);
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, zoomProperties.zoomInPosition.position, progress);
             progress += inc;
-            //if (progress >= zoomProperties.zoomInStay/zoomProperties.zoomInTime)
-            //{
-                //ZoomOut(zoomProperties.smoothness, zoomProperties.zoomOutTime);
-            //}    
+            if (zoomOut)
+            {
+                if (progress >= zoomProperties.zoomInStay/zoomProperties.zoomInTime)
+                {
+                    ZoomOut(zoomProperties.smoothness, zoomProperties.zoomOutTime);
+                }    
+            }
             yield return new WaitForSeconds(zoomProperties.smoothness);
         }
     }
