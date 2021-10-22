@@ -44,7 +44,6 @@ public class CameraController : MonoBehaviour
 
     public void ZoomInWithZoomOut(ZoomProperties zoomProperties)
     {
-        Debug.Log(zoomProperties);
         StartCoroutine(StartZoomIn(zoomProperties, true));
     }
     

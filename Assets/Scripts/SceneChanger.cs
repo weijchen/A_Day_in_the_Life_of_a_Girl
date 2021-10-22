@@ -20,7 +20,7 @@ public class SceneChanger : MonoBehaviour
 
     private void Update()
     {
-        if (_imageManager.currentindex == finalImageInd && Input.GetMouseButtonDown(0))
+        if (_imageManager.GetCurrentIndex() == finalImageInd && Input.GetMouseButtonDown(0))
         {
             int currSceneInd = SceneManager.GetActiveScene().buildIndex;
             FadeToLevel(currSceneInd + 1);

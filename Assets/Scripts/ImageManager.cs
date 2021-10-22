@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class ImageManager : MonoBehaviour
 {
-    public static Transform[] Images;
-    public int currentindex;
-
-    public bool canFadeNext = true;
+    private int currentindex;
+    private bool canFadeNext = true;
+    private static Transform[] Images;
     
     private void Awake()
     {
@@ -46,9 +45,11 @@ public class ImageManager : MonoBehaviour
 
     public void StartFadeOut(GameObject i)
     {
-        StartCoroutine(FadeOut(i, 0.01f, 2f));
+        i.SetActive(false);
+        // StartCoroutine(FadeOut(i, 0.01f, 2f));  // not using right now
     }
     
+    // not using right now
     IEnumerator FadeOut(GameObject i, float smoothness, float duration)
     {
         float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
@@ -77,6 +78,10 @@ public class ImageManager : MonoBehaviour
             sr.color = Color.Lerp(new Color(sr.color.r, sr.color.g, sr.color.b, 0), new Color(sr.color.r, sr.color.g, sr.color.b, 1), progress);
             progress += increment;
             yield return new WaitForSeconds(smoothness);
+            if (progress >= 1)
+            {
+                canFadeNext = true;
+            }
         }
     }
 
@@ -119,5 +124,10 @@ public class ImageManager : MonoBehaviour
     public bool GetCanFadeNext()
     {
         return canFadeNext;
+    }
+
+    public int GetCurrentIndex()
+    {
+        return currentindex;
     }
 }
