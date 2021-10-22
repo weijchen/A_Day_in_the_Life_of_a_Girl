@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.UI;
 
 public struct ZoomProperties
 {
@@ -11,8 +10,17 @@ public struct ZoomProperties
     public float zoomInSize;
     public float smoothness;
     public float zoomInTime;
-    public float zoomInStay;
     public float zoomOutTime;
+    public float zoomInStay;
+    public TransitionType zoomOutType;
+}
+
+public enum TransitionType
+{
+    [Description("Change")]
+    change = 1,
+    [Description("Fade")]
+    fade = 2
 }
 
 public class CameraController : MonoBehaviour
@@ -23,8 +31,10 @@ public class CameraController : MonoBehaviour
     private float startY;
     private float startZ;
     private Transform originPos;
-    private float originSize;
+    private float originSize = 9.6f;
     private static bool canZoom;
+    private bool isZoomOutFinish = true;
+    private ImageManager _imageManager;
 
     void Start()
     {
@@ -34,60 +44,79 @@ public class CameraController : MonoBehaviour
         startY = gameObject.transform.position.y;
         startZ = gameObject.transform.position.z;
         originPos = _camera.transform;
-        originSize = 9.6f;
+        _imageManager = FindObjectOfType<ImageManager>();
     }
 
     public void ZoomIn(ZoomProperties zoomProperties)
     {
-        StartCoroutine(StartZoomIn(zoomProperties, false));
+        StartCoroutine(StartZoomIn(zoomProperties));
     }
 
     public void ZoomInWithZoomOut(ZoomProperties zoomProperties)
     {
-        StartCoroutine(StartZoomIn(zoomProperties, true));
+        StartCoroutine(StartZoomInWithZoomOut(zoomProperties));
+    }
+
+    IEnumerator StartZoomInWithZoomOut(ZoomProperties zoomProperties)
+    {
+        StartCoroutine(StartZoomIn(zoomProperties));
+        yield return new WaitForSeconds(zoomProperties.zoomInStay);
+        StartCoroutine(StartZoomOut(zoomProperties));
     }
     
-    IEnumerator StartZoomIn(ZoomProperties zoomProperties, bool zoomOut)
+    IEnumerator StartZoomIn(ZoomProperties zoomProperties)
     {
         float progress = 0;
-        float inc = zoomProperties.smoothness / zoomProperties.zoomInTime;
-        while (progress < zoomProperties.zoomInStay/zoomProperties.zoomInTime)
+        float inc = zoomProperties.smoothness;
+        while (progress < zoomProperties.zoomInTime)
         {
             _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, zoomProperties.zoomInSize, progress);
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, zoomProperties.zoomInPosition.position, progress);
             progress += inc;
-            if (progress >= zoomProperties.zoomInStay/zoomProperties.zoomInTime)
-            {
-                if (zoomOut)
-                {
-                    ZoomOut(zoomProperties.smoothness, zoomProperties.zoomOutTime);
-                }
-                else
-                {
-                    RestPos(0);
-                }
-            }
+            // TODO: RestPos(0)
+            // if (progress >= zoomProperties.zoomInTime)
+            // {
+            //     if (zoomOut)
+            //     {
+            //         ZoomOut(zoomProperties.smoothness, zoomProperties.zoomOutTime);
+            //     }
+            //     else
+            //     {
+            //         RestPos(0);
+            //     }
+            // }
             yield return new WaitForSeconds(zoomProperties.smoothness);
         }
     }
 
-    public void ZoomOut(float smoothness, float zoomOutTime)
+    public void ZoomOut(ZoomProperties zoomProperties)
     {
-        StartCoroutine(StartZoomOut(smoothness, zoomOutTime));
+        isZoomOutFinish = false;
+        StartCoroutine(StartZoomOut(zoomProperties));
     }
 
-    IEnumerator StartZoomOut(float smoothness, float duration)
+    IEnumerator StartZoomOut(ZoomProperties zoomProperties)
     {
         float progress = 0;
-        float inc = smoothness / duration;
-
-        while (progress < duration)
+        float inc = zoomProperties.smoothness;
+        while (progress < zoomProperties.zoomOutTime)
         {
             _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, startZoomIn, progress);
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, new Vector3(startX, startY, startZ), progress);
             progress += inc;
             
-            yield return new WaitForSeconds(smoothness);
+            yield return new WaitForSeconds(zoomProperties.smoothness);
+
+            if (progress >= zoomProperties.zoomOutTime)
+            {
+                if (zoomProperties.zoomOutType == TransitionType.change)
+                {
+                    _imageManager.ChangeToNext(0);
+                } else if (zoomProperties.zoomOutType == TransitionType.fade)
+                {
+                    _imageManager.FadeToNext(0);
+                }
+            }
         }
     }
 
@@ -98,9 +127,13 @@ public class CameraController : MonoBehaviour
 
     IEnumerator ResetPosIE(float time)
     {
-        Debug.Log(originPos.position);
         yield return new WaitForSeconds(time);
         _camera.transform.position = new Vector3(0,0,-10);
         _camera.orthographicSize = originSize;
+    }
+
+    public bool GetIsZoomOutFinish()
+    {
+        return isZoomOutFinish;
     }
 }

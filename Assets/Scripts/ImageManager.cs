@@ -95,7 +95,6 @@ public class ImageManager : MonoBehaviour
             {
                 StartFadeOut(child.gameObject);
             }
-
         }
         AddIndex();
         if (currentindex < Images.Length)
@@ -107,7 +106,6 @@ public class ImageManager : MonoBehaviour
                 {
                     StartFadeIn(child.gameObject);
                 }
-
             }
             StartFadeIn(Images[currentindex].gameObject);    
         }
