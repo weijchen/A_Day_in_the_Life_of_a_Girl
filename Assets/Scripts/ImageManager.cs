@@ -23,11 +23,9 @@ public class ImageManager : MonoBehaviour
         currentindex = 0;
     }
 
-    public void ChangeToNext()
+    public void ChangeToNext(float waitTime)
     {
-        Images[currentindex].gameObject.SetActive(false);
-        AddIndex();
-        Images[currentindex].gameObject.SetActive(true);
+        StartCoroutine(ChangeToNextIE(waitTime));
     }
 
     public void FadeToNext(float waitTime)
@@ -108,5 +106,13 @@ public class ImageManager : MonoBehaviour
             }
             StartFadeIn(Images[currentindex].gameObject);    
         }
+    }
+
+    IEnumerator ChangeToNextIE(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Images[currentindex].gameObject.SetActive(false);
+        AddIndex();
+        Images[currentindex].gameObject.SetActive(true);
     }
 }
