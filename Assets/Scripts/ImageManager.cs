@@ -115,4 +115,9 @@ public class ImageManager : MonoBehaviour
         AddIndex();
         Images[currentindex].gameObject.SetActive(true);
     }
+
+    public bool GetCanFadeNext()
+    {
+        return canFadeNext;
+    }
 }

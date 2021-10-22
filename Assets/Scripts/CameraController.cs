@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,7 @@ public class CameraController : MonoBehaviour
     private float startZ;
     private Transform originPos;
     private float originSize;
+    private static bool canZoom;
 
     void Start()
     {
@@ -42,6 +44,7 @@ public class CameraController : MonoBehaviour
 
     public void ZoomInWithZoomOut(ZoomProperties zoomProperties)
     {
+        Debug.Log(zoomProperties);
         StartCoroutine(StartZoomIn(zoomProperties, true));
     }
     
@@ -49,7 +52,6 @@ public class CameraController : MonoBehaviour
     {
         float progress = 0;
         float inc = zoomProperties.smoothness / zoomProperties.zoomInTime;
-
         while (progress < zoomProperties.zoomInStay/zoomProperties.zoomInTime)
         {
             _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, zoomProperties.zoomInSize, progress);
@@ -64,7 +66,7 @@ public class CameraController : MonoBehaviour
                 else
                 {
                     RestPos(0);
-                }    
+                }
             }
             yield return new WaitForSeconds(zoomProperties.smoothness);
         }

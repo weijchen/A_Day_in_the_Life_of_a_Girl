@@ -27,6 +27,8 @@ public class Click : MonoBehaviour
     [SerializeField] private float zoomInStay = 2.0f;
     [SerializeField] private float zoomOutTime = 1.0f;
     [SerializeField] private GameObject textObj;
+    [SerializeField] private bool chgToNext = false;
+    [SerializeField] private float priorDelTime = 0.2f;
 
     [Header("Next Arrow")]
     [SerializeField] private float timeToShow = 3.0f;
@@ -60,18 +62,21 @@ public class Click : MonoBehaviour
     
     void Update()
     {
-        if (timer < timeToShow)
+        if (!chgToNext)
         {
-            timer += Time.deltaTime;
-        } else if (timer >= timeToShow)
-        {
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            if (timer < timeToShow)
+            {
+                timer += Time.deltaTime;
+            } else if (timer >= timeToShow)
+            {
+                gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
         
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
+            if (hit.collider != null && hit.collider.gameObject == gameObject && _imageManager.GetCanFadeNext())
             {
                 if (_imageManager.canFadeNext)
                 {
@@ -92,13 +97,22 @@ public class Click : MonoBehaviour
                     {
                         textObj.SetActive(true);
                     }
+
+                    if (chgToNext)
+                    {
+                        _imageManager.FadeToNext(zoomOutTime);
+                        Destroy(textObj, zoomOutTime - priorDelTime);
+                    }
                 }
 
-                if (timer >= timeToShow)
+                if (!chgToNext && timer >= timeToShow)
                 {
                     gameObject.SetActive(false);
                 }
             }
         }
+
+        Debug.Log(timer);
+        Debug.Log(timeToShow);
     }
 }
