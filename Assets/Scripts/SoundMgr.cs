@@ -5,57 +5,60 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundMgr : MonoBehaviour
 {
-    public List<AudioClip> audios;
-    public List<AudioClip> dialogues;
-    public static SoundMgr Instance = null;
-    
-    
-    AudioSource audioSource;
-    public int dialogueIndex = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    [Header("Audio List")]
+    [SerializeField] private List<AudioClip> bgmList;
+    [SerializeField] private List<AudioClip> dialoguesList;
+    [SerializeField] private static SoundMgr Instance = null;
+    [SerializeField] private int dialogueIndex = 0;
+
+    [Header("FadeIn Configs")] 
+    [SerializeField] private float smoothness = 0.5f;
+    [SerializeField] private float increase = 0.05f;
+    [SerializeField] private float maxVolume = 1.0f;
+
+    private bool startBgm = true;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         else
         {
             Instance = this;
         }
+        DontDestroyOnLoad(gameObject);
+    }
+    
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0;
+        PlayBGM(0);
+        VolumeFadeIn();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySound(AudioClip clip)
     {
-
-    }
-
-    public void PlaySound(int clipIndex)
-    {
-        audioSource.PlayOneShot(audios[clipIndex]);
-        
+        audioSource.PlayOneShot(clip);
     }
 
     public void PlayDialogue()
     {
-        if (dialogueIndex == dialogues.Count)
+        if (dialogueIndex == dialoguesList.Count)
         {
             Debug.LogWarning("dialogue index exceeds range!");
             return;
         }
-        audioSource.PlayOneShot(dialogues[dialogueIndex]);
+        audioSource.PlayOneShot(dialoguesList[dialogueIndex]);
         dialogueIndex++;
     }
 
     public void PlayBGM(int clipIndex)
     {
-        audioSource.clip=audios[clipIndex];
+        audioSource.clip = bgmList[clipIndex];
         audioSource.Play();
     }
 
@@ -64,7 +67,17 @@ public class SoundMgr : MonoBehaviour
         audioSource.Stop();
     }
 
-    
+    private void VolumeFadeIn()
+    {
+        StartCoroutine(StartVolumeFadeIn(smoothness, increase, maxVolume));
+    }
 
-   
+    IEnumerator StartVolumeFadeIn(float smoothness, float inc, float maxVol)
+    {
+        while (audioSource.volume < maxVol)
+        {
+            audioSource.volume += inc;
+            yield return new WaitForSeconds(smoothness);
+        }
+    }
 }

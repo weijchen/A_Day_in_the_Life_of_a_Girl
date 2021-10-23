@@ -600,8 +600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf25925fca9da24a859c271febe24f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentindex: 0
-  canFadeNext: 1
 --- !u!4 &124426374
 Transform:
   m_ObjectHideFlags: 0
@@ -4337,6 +4335,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4733516830786031244, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
+      propertyPath: bgmList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733516830786031244, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
+      propertyPath: bgmList.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 39d165077cfa0c5479019c1d41c0114f, type: 3}
+    - target: {fileID: 4733516830786031244, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
+      propertyPath: bgmList.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a52ea18adc486641938b9bc67d151d6, type: 3}
     - target: {fileID: 4733516830786031246, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
       propertyPath: m_Name
       value: SoundManager

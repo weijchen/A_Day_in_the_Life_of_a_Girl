@@ -20,6 +20,7 @@ public class Click : MonoBehaviour
     [Header("General")] 
     [SerializeField] private bool hasStartDelay = false;
     [SerializeField] private float startDelayTime = 1.0f;
+    [SerializeField] private AudioClip clickAudioClip;
     
     [Header("Zoom In")]
     [SerializeField] Transform zoomInPosition;
@@ -40,6 +41,7 @@ public class Click : MonoBehaviour
     private float delayTimer = 0f;
     private ImageManager _imageManager;
     private CameraController _cameraController;
+    private SoundMgr _soundMgr;
     
     void Start()
     {
@@ -47,6 +49,7 @@ public class Click : MonoBehaviour
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         _imageManager = FindObjectOfType<ImageManager>();
         _cameraController = FindObjectOfType<CameraController>();
+        _soundMgr = FindObjectOfType<SoundMgr>();
         
         if (clickEvent == null)
         {
@@ -102,6 +105,7 @@ public class Click : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider != null && hit.collider.gameObject == gameObject && _imageManager.GetCanFadeNext())
             {
+                _soundMgr.PlaySound(clickAudioClip);
                 clickEvent.Invoke("11");
                 GetComponent<BoxCollider2D>().enabled = false;
                 
