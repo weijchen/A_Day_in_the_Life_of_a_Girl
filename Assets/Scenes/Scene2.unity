@@ -600,8 +600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf25925fca9da24a859c271febe24f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentindex: 0
-  canFadeNext: 1
 --- !u!4 &124426374
 Transform:
   m_ObjectHideFlags: 0
@@ -2343,7 +2341,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 124426373}
         m_TargetAssemblyTypeName: ImageManager, Assembly-CSharp
-        m_MethodName: FadeToNext
+        m_MethodName: ChangeToNext
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -94,6 +94,7 @@ public class Click : MonoBehaviour
             {
                 textBubble.SetActive(true);
             }
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
         
