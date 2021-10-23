@@ -2341,7 +2341,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 124426373}
         m_TargetAssemblyTypeName: ImageManager, Assembly-CSharp
-        m_MethodName: FadeToNext
+        m_MethodName: ChangeToNext
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
