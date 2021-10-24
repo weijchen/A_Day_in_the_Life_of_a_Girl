@@ -7,14 +7,16 @@ public class SoundMgr : MonoBehaviour
 {
     [Header("Audio List")]
     [SerializeField] private List<AudioClip> bgmList;
+    [SerializeField] private List<AudioClip> sfxList;
     [SerializeField] private List<AudioClip> dialoguesList;
-    [SerializeField] private static SoundMgr Instance = null;
     [SerializeField] private int dialogueIndex = 0;
 
     [Header("FadeIn Configs")] 
     [SerializeField] private float smoothness = 0.5f;
     [SerializeField] private float increase = 0.05f;
     [SerializeField] private float maxVolume = 1.0f;
+
+    public static SoundMgr Instance = null;
 
     private bool startBgm = true;
     private AudioSource audioSource;
@@ -40,9 +42,14 @@ public class SoundMgr : MonoBehaviour
         VolumeFadeIn();
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySoundFromClick(AudioClip clip)
     {
         audioSource.PlayOneShot(clip);
+    }
+    
+    public void PlaySound(int index)
+    {
+        audioSource.PlayOneShot(sfxList[index]);
     }
 
     public void PlayDialogue()
