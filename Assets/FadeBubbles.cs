@@ -8,11 +8,6 @@ public class FadeBubbles : MonoBehaviour
 
     void Start()
     {
-        foreach (Transform child in transform)
-        {
-            bubbles.Add(child.transform.GetChild(0));
-        }
-
         StartFadeOut();
     }
 
