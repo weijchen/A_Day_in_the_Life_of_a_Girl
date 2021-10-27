@@ -10,8 +10,13 @@ public class ArgumentSpawner : MonoBehaviour
     [SerializeField] private float decreaseScale = 0.05f;
     [SerializeField] private GameObject argumentPrefab;
     [SerializeField] private GameObject nextArrow;
-    
+    [SerializeField] private Transform spawnTransform;
+    [SerializeField] private bool isUp = false;
+    [SerializeField] private bool autoDestroy = false;
+    [SerializeField] private GameObject destroyBase;
+
     private ArgumentPoints _argumentPoints;
+    private ArgumentPointsUp _argumentPointsUp;
     private List<Transform> pickedPath;
     private GameObject spawnPrefab;
 
@@ -20,8 +25,18 @@ public class ArgumentSpawner : MonoBehaviour
 
     private void Start()
     {
-        _argumentPoints = FindObjectOfType<ArgumentPoints>();
-        pickedPath = _argumentPoints.GetPoints();
+        if (isUp)
+        {
+            _argumentPoints = null;
+            _argumentPointsUp = FindObjectOfType<ArgumentPointsUp>();
+            pickedPath = _argumentPointsUp.GetPoints();
+        }
+        else
+        {
+            _argumentPoints = FindObjectOfType<ArgumentPoints>();
+            _argumentPointsUp = null;
+            pickedPath = _argumentPoints.GetPoints();
+        }
         nextArrow.SetActive(false);
     }
 
@@ -41,7 +56,7 @@ public class ArgumentSpawner : MonoBehaviour
                     rot.y += 180.0f;
                 }
 
-                spawnPrefab = Instantiate(argumentPrefab, transform.position, rot);
+                spawnPrefab = Instantiate(argumentPrefab, spawnTransform.position, rot);
                 spawnPrefab.transform.parent = transform;
                 timer = 0;
                 initialSpawnTime -= decreaseScale;
@@ -63,5 +78,12 @@ public class ArgumentSpawner : MonoBehaviour
     private void Move(GameObject i)
     {
         i.transform.position = Vector3.MoveTowards(i.transform.position, pickedPath[currIndex].position, moveSpeed * Time.deltaTime);
+        if (autoDestroy)
+        {
+            if (Mathf.Abs(i.transform.position.y - destroyBase.transform.position.y) <= 0.5f)
+            {
+                Destroy(i);
+            }
+        }
     }
 }
