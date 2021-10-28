@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EmojiButton : MonoBehaviour
 {
@@ -35,6 +36,10 @@ public class EmojiButton : MonoBehaviour
             girlfriendmessage.SetActive(true);
             transform.parent.gameObject.SetActive(false);
         }
+        if (SceneManager.GetActiveScene().name != "Scene2")
+        {
+            MynextMessage.SetActive(false);
+        }
         
         NextButton.SetActive(true);
        
@@ -60,7 +65,7 @@ public class EmojiButton : MonoBehaviour
             girlfriendmessage.SetActive(true);
             transform.parent.gameObject.SetActive(false);
         }
-
+        MynextMessage.SetActive(false);
         NextButton.SetActive(true);
 
 
