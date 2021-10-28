@@ -29,7 +29,8 @@ public class SceneChanger : MonoBehaviour
             }
             else if (SceneManager.GetActiveScene().name == "Scene5")
             {
-                SceneManager.LoadScene("Intro");
+                SceneManager.LoadScene(0);
+                // SceneManager.LoadScene();
             }
 
 

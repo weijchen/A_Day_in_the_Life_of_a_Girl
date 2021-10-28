@@ -14,6 +14,7 @@ public class ArgumentSpawner : MonoBehaviour
     [SerializeField] private bool isUp = false;
     [SerializeField] private bool autoDestroy = false;
     [SerializeField] private GameObject destroyBase;
+    [SerializeField] private GameObject blueArgumentBubble;
 
     private ArgumentPoints _argumentPoints;
     private ArgumentPointsUp _argumentPointsUp;
@@ -73,6 +74,11 @@ public class ArgumentSpawner : MonoBehaviour
         {
             Move(spawnPrefab);
         }
+    }
+
+    public void ChgArgumentPrefab()
+    {
+        argumentPrefab = blueArgumentBubble;
     }
 
     private void Move(GameObject i)

@@ -15,7 +15,7 @@ public class FadeBubbles : MonoBehaviour
     {
         foreach (Transform bubble in bubbles)
         {
-            StartCoroutine(FadeOut(bubble, 0.01f, 2.0f));
+            StartCoroutine(FadeOut(bubble, 0.01f, 4.0f));
         }        
     }
 
