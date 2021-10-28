@@ -895,6 +895,10 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1573617417177939210, guid: 8f1934d717c78fe429deb9c0bb066d8c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573617417177939210, guid: 8f1934d717c78fe429deb9c0bb066d8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1741,7 +1745,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d0834cb297ef864a9275f2af469335c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64394ac3aabc85e41a8b9dbf677875cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2837,7 +2841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.42
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2874,6 +2878,22 @@ PrefabInstance:
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.x
+      value: 22.560255
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.y
+      value: 26.93087
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.x
+      value: -8.749181
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.y
+      value: 10.836271
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829895, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_Name
@@ -3224,11 +3244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.42
+      value: 3.21
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.53
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3262,6 +3282,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829893, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829893, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.x
+      value: 34.65918
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.y
+      value: 31.916634
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.x
+      value: -10.532631
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.65475416
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829895, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_Name
       value: NextArrow
@@ -3280,7 +3324,7 @@ PrefabInstance:
       objectReference: {fileID: 361951088}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeToNext
+      value: ChangeToNext
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
@@ -4652,11 +4696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.42
+      value: -3.03
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.53
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4690,6 +4734,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829893, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829893, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.x
+      value: 9.592228
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.y
+      value: 22.98895
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.x
+      value: -2.2651682
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.9995432
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829895, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_Name
       value: NextArrow
@@ -4708,7 +4776,7 @@ PrefabInstance:
       objectReference: {fileID: 361951088}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeToNext
+      value: ChangeToNext
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
@@ -4979,7 +5047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: zoomInSize
-      value: 1
+      value: 6.04
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: zoomInTime
@@ -5257,11 +5325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.42
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.53
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5295,6 +5363,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829893, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829893, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.x
+      value: 10.62723
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.y
+      value: 19.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.22017789
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.y
+      value: -4.479443
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829895, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_Name
       value: NextArrow
@@ -5313,7 +5405,7 @@ PrefabInstance:
       objectReference: {fileID: 361951088}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeToNext
+      value: ChangeToNext
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
@@ -5747,11 +5839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.42
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.53
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829892, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5785,6 +5877,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829893, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829893, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.x
+      value: 8.605644
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Size.y
+      value: 12.082572
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.7718747
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829894, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.40551138
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829895, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: m_Name
       value: NextArrow
@@ -5803,7 +5919,7 @@ PrefabInstance:
       objectReference: {fileID: 361951088}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeToNext
+      value: ChangeToNext
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
