@@ -30,6 +30,7 @@ public class Click : MonoBehaviour
     [SerializeField] private float zoomOutTime = 1.0f;
     [SerializeField] private float zoomInStay = 1.0f;
     [SerializeField] private TransitionType zoomOutType = TransitionType.change;
+    [SerializeField] private bool chgAfterZoomIn = false;
     [SerializeField] private GameObject textBubble;
     [SerializeField] private GameObject textContext;
 
@@ -120,6 +121,7 @@ public class Click : MonoBehaviour
                     zoomProperties.zoomOutTime = zoomOutTime;
                     zoomProperties.zoomInStay = zoomInStay;
                     zoomProperties.zoomOutType = zoomOutType;
+                    zoomProperties.chgAfterZoomIn = chgAfterZoomIn;
                     zoomEvent.Invoke(zoomProperties);
                     if (textContext != null)
                     {

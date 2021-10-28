@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7606234929088447786}
   - component: {fileID: 1988417702875567546}
   m_Layer: 0
-  m_Name: ArgumentBubble
+  m_Name: ArgumentBubbleUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4d8225883755c7f4c891e43a2b867372, type: 3}
-  m_Color: {r: 0.8962264, g: 0.2325116, b: 0.2325116, a: 1}
+  m_Color: {r: 0.3254717, g: 0.64335865, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

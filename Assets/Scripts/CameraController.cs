@@ -13,6 +13,7 @@ public struct ZoomProperties
     public float zoomOutTime;
     public float zoomInStay;
     public TransitionType zoomOutType;
+    public bool chgAfterZoomIn;
 }
 
 public enum TransitionType
@@ -73,9 +74,19 @@ public class CameraController : MonoBehaviour
             _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, zoomProperties.zoomInSize, progress);
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, zoomProperties.zoomInPosition.position, progress);
             progress += inc;
-            // TODO: RestPos(0)
-            // if (progress >= zoomProperties.zoomInTime)
-            // {
+            if (progress >= zoomProperties.zoomInTime)
+            {
+                if (zoomProperties.chgAfterZoomIn)
+                {
+                    if (zoomProperties.zoomOutType == TransitionType.change)
+                    {
+                        _imageManager.ChangeToNext(0);
+                    } 
+                    else if (zoomProperties.zoomOutType == TransitionType.fade)
+                    {
+                        _imageManager.FadeToNext(0);
+                    }
+                }
             //     if (zoomOut)
             //     {
             //         ZoomOut(zoomProperties.smoothness, zoomProperties.zoomOutTime);
@@ -84,7 +95,7 @@ public class CameraController : MonoBehaviour
             //     {
             //         RestPos(0);
             //     }
-            // }
+            }
             yield return new WaitForSeconds(zoomProperties.smoothness);
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,15 @@ public class ScratchOffEffect : MonoBehaviour
 {
     [SerializeField] private int revealAmount = 800;
     [SerializeField] private GameObject maskPrefab;
+    [SerializeField] private GameObject nextArrow;
     
     private bool isPressed = false;
-    
+
+    private void Start()
+    {
+        nextArrow.SetActive(false);
+    }
+
     void Update()
     {
         var mousePos = Input.mousePosition;
@@ -37,6 +44,7 @@ public class ScratchOffEffect : MonoBehaviour
 
     void Reveal()
     {
+        nextArrow.SetActive(true);
         Destroy(gameObject);
     }
 }
