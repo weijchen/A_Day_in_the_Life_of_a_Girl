@@ -30,6 +30,7 @@ public class SceneChanger : MonoBehaviour
             else if (SceneManager.GetActiveScene().name == "Scene5")
             {
                 SceneManager.LoadScene("Intro");
+                SoundMgr.Instance.PlayBGM(0);
             }
 
 
@@ -44,6 +45,14 @@ public class SceneChanger : MonoBehaviour
 
     public void OnFadeComplete()
     {
+        if (levelToLoad == 4)
+        {
+            SoundMgr.Instance.PlayBGM(1);
+        }
+        else if (levelToLoad == 5)
+        {
+            SoundMgr.Instance.PlayBGM(2);
+        }
         SceneManager.LoadScene(levelToLoad);
     }
 }

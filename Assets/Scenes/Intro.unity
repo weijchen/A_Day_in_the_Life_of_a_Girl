@@ -540,6 +540,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4733516830786031244, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
+      propertyPath: bgmList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733516830786031244, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
+      propertyPath: bgmList.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: edf6873de3521df4591b567dc22492c8, type: 3}
+    - target: {fileID: 4733516830786031244, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
+      propertyPath: bgmList.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a52ea18adc486641938b9bc67d151d6, type: 3}
     - target: {fileID: 4733516830786031246, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -624,8 +636,8 @@ Camera:
   m_GameObject: {fileID: 1841681238}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
