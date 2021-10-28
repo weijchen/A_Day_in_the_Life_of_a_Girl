@@ -40,4 +40,29 @@ public class EmojiButton : MonoBehaviour
        
 
     }
+
+    public void Dialog()
+    {
+
+ 
+    
+    }
+
+    IEnumerator ChangeToNextDialog()
+    {
+        GetComponent<Click>().enabled = false;
+        NearButton.GetComponent<Click>().enabled = false;
+        MynextMessage.SetActive(true);
+
+        if (girlfriendmessage != null)
+        {
+            yield return new WaitForSeconds(3f);
+            girlfriendmessage.SetActive(true);
+            transform.parent.gameObject.SetActive(false);
+        }
+
+        NextButton.SetActive(true);
+
+
+    }
 }
