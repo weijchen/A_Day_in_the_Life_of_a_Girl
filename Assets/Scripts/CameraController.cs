@@ -122,12 +122,14 @@ public class CameraController : MonoBehaviour
 
     public void RestPos(float time)
     {
+        
         StartCoroutine(ResetPosIE(time));
     }
 
     IEnumerator ResetPosIE(float time)
     {
         yield return new WaitForSeconds(time);
+        Debug.Log("111");
         _camera.transform.position = new Vector3(0,0,-10);
         _camera.orthographicSize = originSize;
     }
