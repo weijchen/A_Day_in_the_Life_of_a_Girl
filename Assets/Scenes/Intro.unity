@@ -552,6 +552,10 @@ PrefabInstance:
       propertyPath: bgmList.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 2a52ea18adc486641938b9bc67d151d6, type: 3}
+    - target: {fileID: 4733516830786031244, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
+      propertyPath: bgmList.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4733516830786031246, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
       propertyPath: m_Name
       value: SoundManager

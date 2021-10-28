@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4733516830786031243
 Transform:
   m_ObjectHideFlags: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmList:
   - {fileID: 8300000, guid: cf762e6c478c45349ade2ad54a96b646, type: 3}
+  - {fileID: 8300000, guid: edf6873de3521df4591b567dc22492c8, type: 3}
   - {fileID: 8300000, guid: 2a52ea18adc486641938b9bc67d151d6, type: 3}
   sfxList: []
   dialoguesList: []
