@@ -29,7 +29,11 @@ public class EmojiButton : MonoBehaviour
         GetComponent <Click>().enabled = false;
         NearButton.GetComponent<Click>().enabled = false;
         MynextMessage.SetActive(true);
-        
+        if (SceneManager.GetActiveScene().name == "Scene2")
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            NearButton.transform.GetChild(0).gameObject.SetActive(false);
+        }
         if (girlfriendmessage != null)
         {
             yield return new WaitForSeconds(3f);
