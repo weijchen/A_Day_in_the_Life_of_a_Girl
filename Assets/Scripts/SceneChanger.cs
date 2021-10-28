@@ -27,11 +27,11 @@ public class SceneChanger : MonoBehaviour
                 int currSceneInd = SceneManager.GetActiveScene().buildIndex;
                 FadeToLevel(currSceneInd + 1);
             }
-            else if (SceneManager.GetActiveScene().buildIndex == 3)
+            else if (SceneManager.GetActiveScene().buildIndex == 5)
             {
                 SoundMgr.Instance.PlayBGM(1);
             }
-            else if (SceneManager.GetActiveScene().buildIndex == 4)
+            else if (SceneManager.GetActiveScene().buildIndex == 6)
             {
                 SceneManager.LoadScene("Intro");
                 SoundMgr.Instance.PlayBGM(2);

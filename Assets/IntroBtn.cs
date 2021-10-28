@@ -15,11 +15,11 @@ public class IntroBtn : MonoBehaviour
     [SerializeField] private AudioClip clickAudioClip;
     public IntroEvent introEvent;
 
-    private SoundMgr _soundMgr;
+    // private SoundMgr _soundMgr;
 
     void Start()
     {
-        _soundMgr = FindObjectOfType<SoundMgr>();
+        // _soundMgr = FindObjectOfType<SoundMgr>();
         if (introEvent == null)
         {
             introEvent = new IntroEvent();
@@ -34,7 +34,7 @@ public class IntroBtn : MonoBehaviour
             
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                _soundMgr.PlaySoundFromClick(clickAudioClip);
+                SoundMgr.Instance.PlaySoundFromClick(clickAudioClip);
                 introEvent.Invoke("11");
             }
         }

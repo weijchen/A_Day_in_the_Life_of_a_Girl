@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundMgr : MonoBehaviour
@@ -18,7 +20,7 @@ public class SoundMgr : MonoBehaviour
 
     public static SoundMgr Instance = null;
 
-    private bool startBgm = true;
+    private bool startBgm = false;
     private AudioSource audioSource;
 
     private void Awake()
@@ -38,8 +40,16 @@ public class SoundMgr : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = 0;
-        PlayBGM(0);
-        VolumeFadeIn();
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 1 && !startBgm)
+        {
+            PlayBGM(0);
+            VolumeFadeIn();
+            startBgm = true;
+        }
     }
 
     public void PlaySoundFromClick(AudioClip clip)
