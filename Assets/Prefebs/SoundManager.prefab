@@ -44,9 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456abb0624c6788409e7be03311a1276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audios: []
-  dialogues: []
+  bgmList:
+  - {fileID: 8300000, guid: cf762e6c478c45349ade2ad54a96b646, type: 3}
+  - {fileID: 8300000, guid: 2a52ea18adc486641938b9bc67d151d6, type: 3}
+  sfxList: []
+  dialoguesList: []
   dialogueIndex: 0
+  smoothness: 0.5
+  increase: 0.05
+  maxVolume: 1
 --- !u!82 &4733516830786031245
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58,10 +64,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
