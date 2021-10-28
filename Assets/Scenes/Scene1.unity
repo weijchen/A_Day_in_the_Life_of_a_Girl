@@ -2723,7 +2723,7 @@ PrefabInstance:
     - target: {fileID: 4733516830786031244, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
       propertyPath: bgmList.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 39d165077cfa0c5479019c1d41c0114f, type: 3}
+      objectReference: {fileID: 8300000, guid: cf762e6c478c45349ade2ad54a96b646, type: 3}
     - target: {fileID: 4733516830786031244, guid: 3a9569b3430e6474aa6f1cb1f2d58f4d, type: 3}
       propertyPath: bgmList.Array.data[1]
       value: 
