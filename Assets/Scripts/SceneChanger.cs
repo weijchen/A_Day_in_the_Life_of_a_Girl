@@ -22,8 +22,17 @@ public class SceneChanger : MonoBehaviour
     {
         if (_imageManager.GetCurrentIndex() == finalImageInd && Input.GetMouseButtonDown(0))
         {
-            int currSceneInd = SceneManager.GetActiveScene().buildIndex;
-            FadeToLevel(currSceneInd + 1);
+            if (SceneManager.GetActiveScene().name != "Scene5")
+            {
+                int currSceneInd = SceneManager.GetActiveScene().buildIndex;
+                FadeToLevel(currSceneInd + 1);
+            }
+            else if (SceneManager.GetActiveScene().name == "Scene5")
+            {
+                SceneManager.LoadScene("Intro");
+            }
+
+
         }
     }
 
