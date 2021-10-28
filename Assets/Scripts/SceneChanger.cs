@@ -33,7 +33,7 @@ public class SceneChanger : MonoBehaviour
             }
             else if (SceneManager.GetActiveScene().buildIndex == 6)
             {
-                SceneManager.LoadScene("Intro");
+                // SceneManager.LoadScene("Intro");
                 SoundMgr.Instance.PlayBGM(2);
             }
 

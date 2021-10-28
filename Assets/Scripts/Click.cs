@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class ClickEvent : UnityEvent<string>
@@ -15,12 +16,20 @@ public class ZoomEvent : UnityEvent<ZoomProperties>
 
 }
 
+[System.Serializable]
+public class SceneChgEvent : UnityEvent<int>
+{
+
+}
+
 public class Click : MonoBehaviour
 {
     [Header("General")] 
     [SerializeField] private bool hasStartDelay = false;
     [SerializeField] private float startDelayTime = 1.0f;
     [SerializeField] private AudioClip clickAudioClip;
+    [SerializeField] private bool forEnding = false;
+    [SerializeField] private int endingSceneIndex = 7;
     
     [Header("Zoom In")]
     [SerializeField] Transform zoomInPosition;
@@ -36,6 +45,7 @@ public class Click : MonoBehaviour
 
     public ClickEvent clickEvent;
     public ZoomEvent zoomEvent;
+    public SceneChgEvent sceneChgEvent;
     public ZoomProperties zoomProperties;
 
     private bool hasZoom = false;
@@ -60,6 +70,11 @@ public class Click : MonoBehaviour
         if (zoomEvent == null)
         {
             zoomEvent = new ZoomEvent();
+        }
+        
+        if (sceneChgEvent == null)
+        {
+            sceneChgEvent = new SceneChgEvent();
         }
 
         if (textBubble != null)
@@ -105,10 +120,17 @@ public class Click : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-//Debug.Log(hit.collider.gameObject.name);
+
             if (hit.collider != null && hit.collider.gameObject == gameObject && _imageManager.GetCanFadeNext())
             {
+                Debug.Log("hihi");
                 _soundMgr.PlaySoundFromClick(clickAudioClip);
+                if (forEnding)
+                {
+                    Debug.Log("hi");
+                    sceneChgEvent.Invoke(endingSceneIndex);
+                }
+                
                 clickEvent.Invoke("11");
                 GetComponent<BoxCollider2D>().enabled = false;
                 
@@ -135,6 +157,8 @@ public class Click : MonoBehaviour
                 {
                     gameObject.SetActive(false);
                 }
+                
+                
             }
         }
     }
