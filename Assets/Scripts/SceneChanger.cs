@@ -45,11 +45,11 @@ public class SceneChanger : MonoBehaviour
 
     public void OnFadeComplete()
     {
-        if (levelToLoad == 4)
+        if (levelToLoad == 5)
         {
             SoundMgr.Instance.PlayBGM(1);
         }
-        else if (levelToLoad == 5)
+        else if (levelToLoad == 6)
         {
             SoundMgr.Instance.PlayBGM(2);
         }
