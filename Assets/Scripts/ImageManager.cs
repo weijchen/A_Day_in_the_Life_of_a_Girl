@@ -75,13 +75,18 @@ public class ImageManager : MonoBehaviour
         SpriteRenderer sr = i.GetComponent<SpriteRenderer>();
         while (progress < 1)
         {
-            sr.color = Color.Lerp(new Color(sr.color.r, sr.color.g, sr.color.b, 0), new Color(sr.color.r, sr.color.g, sr.color.b, 1), progress);
-            progress += increment;
-            yield return new WaitForSeconds(smoothness);
-            if (progress >= 1)
+            if (sr != null)
             {
-                canFadeNext = true;
+                sr.color = Color.Lerp(new Color(sr.color.r, sr.color.g, sr.color.b, 0), new Color(sr.color.r, sr.color.g, sr.color.b, 1), progress);
+                progress += increment;
+                yield return new WaitForSeconds(smoothness);
+                if (progress >= 1)
+                {
+                    canFadeNext = true;
+                }
             }
+            else progress = 1;
+            
         }
     }
 
