@@ -105,7 +105,7 @@ public class Click : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            Debug.Log(hit.collider.gameObject.name);
+//Debug.Log(hit.collider.gameObject.name);
             if (hit.collider != null && hit.collider.gameObject == gameObject && _imageManager.GetCanFadeNext())
             {
                 _soundMgr.PlaySoundFromClick(clickAudioClip);
