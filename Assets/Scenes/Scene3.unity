@@ -426,9 +426,17 @@ PrefabInstance:
       value: NextArrow (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -535,9 +543,17 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ddebddea7fb7a574cb48d68412022f30, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: zoomInPosition
       value: 
@@ -1317,9 +1333,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -1520,6 +1544,8 @@ MonoBehaviour:
   hasStartDelay: 0
   startDelayTime: 1
   clickAudioClip: {fileID: 8300000, guid: c1a24a86786dc584a92a25346c6c2a37, type: 3}
+  forEnding: 0
+  endingSceneIndex: 7
   zoomInPosition: {fileID: 0}
   zoomInSize: 0
   smoothness: 0.01
@@ -1546,6 +1572,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   zoomEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneChgEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!61 &466118375
@@ -2236,6 +2265,8 @@ MonoBehaviour:
   hasStartDelay: 0
   startDelayTime: 1
   clickAudioClip: {fileID: 8300000, guid: c1a24a86786dc584a92a25346c6c2a37, type: 3}
+  forEnding: 0
+  endingSceneIndex: 7
   zoomInPosition: {fileID: 0}
   zoomInSize: 0
   smoothness: 0.01
@@ -2262,6 +2293,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   zoomEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneChgEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!212 &728485814
@@ -2640,9 +2674,21 @@ PrefabInstance:
       value: NextArrow (3)
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -2784,6 +2830,8 @@ MonoBehaviour:
   hasStartDelay: 0
   startDelayTime: 1
   clickAudioClip: {fileID: 8300000, guid: c1a24a86786dc584a92a25346c6c2a37, type: 3}
+  forEnding: 0
+  endingSceneIndex: 7
   zoomInPosition: {fileID: 0}
   zoomInSize: 0
   smoothness: 0.01
@@ -2810,6 +2858,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   zoomEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneChgEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &802397820
@@ -2900,9 +2951,17 @@ PrefabInstance:
       value: NextArrow
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -3311,9 +3370,17 @@ PrefabInstance:
       value: NextArrow
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -3753,6 +3820,8 @@ MonoBehaviour:
   hasStartDelay: 0
   startDelayTime: 1
   clickAudioClip: {fileID: 8300000, guid: c1a24a86786dc584a92a25346c6c2a37, type: 3}
+  forEnding: 0
+  endingSceneIndex: 7
   zoomInPosition: {fileID: 0}
   zoomInSize: 0
   smoothness: 0.01
@@ -3779,6 +3848,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   zoomEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneChgEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!212 &1250307899
@@ -4763,9 +4835,17 @@ PrefabInstance:
       value: NextArrow
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -5058,9 +5138,17 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: zoomInPosition
       value: 
@@ -5207,9 +5295,17 @@ PrefabInstance:
       value: NextArrow
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -5392,9 +5488,17 @@ PrefabInstance:
       value: NextArrow
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -5809,9 +5913,17 @@ PrefabInstance:
       value: NextArrow (3)
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -5906,9 +6018,17 @@ PrefabInstance:
       value: NextArrow
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: hasStartDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac774abe7cdc6b341ba0b87acc73b1cc, type: 3}
+    - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
+      propertyPath: startDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -6497,6 +6617,8 @@ MonoBehaviour:
   hasStartDelay: 0
   startDelayTime: 1
   clickAudioClip: {fileID: 8300000, guid: c1a24a86786dc584a92a25346c6c2a37, type: 3}
+  forEnding: 0
+  endingSceneIndex: 7
   zoomInPosition: {fileID: 0}
   zoomInSize: 0
   smoothness: 0.01
@@ -6523,6 +6645,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   zoomEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  sceneChgEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!212 &2030426540

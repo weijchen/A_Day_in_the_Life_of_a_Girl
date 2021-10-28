@@ -27,19 +27,6 @@ public class ImageManager : MonoBehaviour
         StartCoroutine(ChangeToNextIE(waitTime));
     }
 
-    public void ChangeToNextEnding(float waitTime)
-    {
-        Images[currentindex].gameObject.SetActive(false);
-        Debug.Log(currentindex);
-        AddIndex();
-        Debug.Log(currentindex);
-        Images[currentindex].gameObject.SetActive(true);
-        // Debug.Log(currentindex);
-        // currentindex = 0;
-        // StartCoroutine(ChangeToNextIE(waitTime));
-        // Debug.Log(currentindex);
-    }
-    
     public void FadeToNext(float waitTime)
     {
         canFadeNext = false;
