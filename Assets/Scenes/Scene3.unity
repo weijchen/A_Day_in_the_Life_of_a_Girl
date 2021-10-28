@@ -5027,7 +5027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: zoomInSize
-      value: 1
+      value: 6.04
       objectReference: {fileID: 0}
     - target: {fileID: 5805193297478829897, guid: faf0f34cfa87b054e99fd2bc5ae9d99f, type: 3}
       propertyPath: zoomInTime
