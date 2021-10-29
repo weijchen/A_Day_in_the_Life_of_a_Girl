@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.5921569, g: 0.4784314, b: 0.6745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 2067097126}
   - component: {fileID: 2067097128}
   m_Layer: 0
-  m_Name: Logo_Team17 (1)
+  m_Name: Team17Video
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067097125}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 97914de13505e7843aaf6fd58efb1d18, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 769c412d581f20342904745c6434251d, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 576811344}

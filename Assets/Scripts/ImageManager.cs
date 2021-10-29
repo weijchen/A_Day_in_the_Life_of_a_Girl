@@ -25,7 +25,10 @@ public class ImageManager : MonoBehaviour
     private void Start()
     {
         currentindex = 0;
-        ppObject.SetActive(false);
+        if (ppObject != null)
+        {
+            ppObject.SetActive(false);
+        }
     }
 
     private void Update()
