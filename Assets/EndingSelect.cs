@@ -15,4 +15,9 @@ public class EndingSelect : MonoBehaviour
     {
         SceneManager.LoadScene(8);
     }
+
+    public void BackToMain()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

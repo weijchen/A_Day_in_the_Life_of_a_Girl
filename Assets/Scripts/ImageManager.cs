@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class ImageManager : MonoBehaviour
 {
+    [SerializeField] private bool usePP = false;
+    [SerializeField] private int openPPIndex = 0;
+    [SerializeField] private int closePPIndex = 0;
+    [SerializeField] private GameObject ppObject;
+    
     private int currentindex;
     private bool canFadeNext = true;
     private static Transform[] Images;
@@ -20,6 +25,22 @@ public class ImageManager : MonoBehaviour
     private void Start()
     {
         currentindex = 0;
+        ppObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (usePP)
+        {
+            if (currentindex == openPPIndex)
+            {
+                ppObject.SetActive(true);
+            } else if (currentindex == closePPIndex)
+            {
+                ppObject.SetActive(false);
+            }
+            
+        }
     }
 
     public void ChangeToNext(float waitTime)
